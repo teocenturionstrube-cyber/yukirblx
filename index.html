@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Yuki External</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="icon.ico">
 
   <style>
@@ -12,61 +10,54 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
     }
 
     body {
-      background: #0a0a0f;
-      color: white;
-      min-height: 200vh;
+      background: #0b0e14;
+      color: #ffffff;
       overflow-x: hidden;
     }
 
-    /* Header */
-    .top-bar {
-      position: absolute;
-      top: 20px;
+    /* Top left title */
+    .top-left {
+      position: fixed;
+      top: 15px;
       left: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: bold;
       opacity: 0;
       animation: fadeIn 1s forwards;
     }
 
-    .top-bar img {
-      width: 26px;
-      height: 26px;
+    .top-left img {
+      width: 22px;
+      height: 22px;
     }
 
-    .title {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    /* Main content */
-    .container {
+    /* Center content */
+    .center {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      animation: slideUp 1.2s ease forwards;
+      animation: slideUp 1s ease forwards;
+    }
+
+    .title {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
     .subtitle {
-      font-size: 32px;
-      margin-bottom: 10px;
-      animation: fadeIn 1.5s forwards;
-    }
-
-    .desc {
       font-size: 18px;
-      color: #bbbbbb;
-      margin-bottom: 30px;
-      animation: fadeIn 1.8s forwards;
+      color: #aaa;
+      margin-bottom: 35px;
     }
 
     /* Buttons */
@@ -74,28 +65,28 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      animation: fadeIn 2s forwards;
+      width: 260px;
     }
 
     .btn {
-      background: linear-gradient(135deg, #5b7cff, #8b5cff);
+      background: #5865f2;
       color: white;
       text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
 
     .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(91,124,255,0.7);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 15px rgba(88,101,242,0.6);
     }
 
     .btn img {
@@ -109,45 +100,43 @@
     }
 
     /* Animations */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
     @keyframes slideUp {
       from { transform: translateY(40px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Feature list section */
+    /* Feature section */
     .features {
-      margin-top: 80px;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
 
     .features h2 {
-      font-size: 36px;
+      font-size: 32px;
       margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top logo -->
-  <div class="top-bar">
+  <!-- Top left label -->
+  <div class="top-left">
     <img src="icon.ico" alt="icon">
-    <div class="title">Yuki external</div>
+    <span>Yuki external</span>
   </div>
 
-  <!-- Main content -->
-  <div class="container">
-    <div class="subtitle">Hey, not on yuki yet?</div>
-    <div class="desc">Check our socials!</div>
+  <!-- Main section -->
+  <div class="center">
+    <div class="title">Hey, not on yuki yet?</div>
+    <div class="subtitle">Check our socials!</div>
 
     <div class="buttons">
       <a href="https://www.youtube.com/@romajikaigi" target="_blank" class="btn">
-        <img src="youtube.png" alt="YouTube" class="yt-icon">
+        <img src="youtube.png" class="yt-icon">
         YouTube channel
       </a>
 
@@ -157,7 +146,7 @@
     </div>
   </div>
 
-  <!-- Feature list section -->
+  <!-- Feature list -->
   <div class="features">
     <h2>Feature list</h2>
   </div>
