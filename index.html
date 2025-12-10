@@ -2,56 +2,105 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi web pro</title>
+  <title>Mi sitio pro</title>
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
-      background: #0a0a0a;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111, #000);
       color: white;
       text-align: center;
+      overflow-x: hidden;
     }
 
     header {
       padding: 20px;
-      font-size: 20px;
-      background: rgba(0,0,0,0.6);
+      font-size: 22px;
+      background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
     }
 
-    .card {
-      background: #0f0f0f;
-      border-radius: 20px;
-      margin: 40px auto;
-      padding: 30px;
-      width: 80%;
-      max-width: 500px;
-      box-shadow: 0 0 30px rgba(255,255,255,0.05);
-      transition: transform 0.3s;
+    h1 {
+      margin-top: 60px;
+      font-size: 48px;
+      animation: fadeIn 1.4s ease;
     }
 
-    .card:hover {
-      transform: scale(1.03);
+    p {
+      opacity: 0.7;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      animation: slideUp 1.2s ease;
     }
 
     button {
       background: white;
       color: black;
       border: none;
-      padding: 12px 24px;
-      border-radius: 10px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 16px;
       cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .card {
+      margin: 60px auto;
+      padding: 40px;
+      background: #0b0b0b;
+      border-radius: 25px;
+      max-width: 700px;
+      box-shadow: 0 0 40px rgba(255,255,255,0.03);
+      animation: fadeIn 2.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-<header>✨ Mi sitio estilo moderno</header>
+<header>🚀 Mi Web Animada</header>
+
+<h1>Bienvenido a mi sitio</h1>
+<p>Ahora con animaciones y botones pro</p>
+
+<div class="buttons">
+  <button onclick="alert('Gracias por visitar!')">Saludar</button>
+  <button onclick="alert('Botón activo')">Info</button>
+  <button onclick="alert('Próximamente...')">Descargar</button>
+</div>
 
 <div class="card">
-  <h1>Bienvenido</h1>
-  <p>Esta es una página con estilo pro.</p>
-  <button>Descargar</button>
+  <h2>Sección especial</h2>
+  <p>Esta zona aparece con una animación suave al cargar.</p>
 </div>
 
 </body>
