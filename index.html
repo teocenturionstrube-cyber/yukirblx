@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Yuki external</title>
+  <title>Yuki External</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="icon.ico">
@@ -16,69 +16,86 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #111, #000);
+      background: #0a0a0f;
       color: white;
+      min-height: 200vh;
       overflow-x: hidden;
     }
 
-    /* Logo arriba a la izquierda */
-    .top-left {
-      position: fixed;
+    /* Header */
+    .top-bar {
+      position: absolute;
       top: 20px;
-      left: 50px;
+      left: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 20px;
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .top-bar img {
+      width: 26px;
+      height: 26px;
+    }
+
+    .title {
+      font-size: 18px;
       font-weight: bold;
-      z-index: 1000;
     }
 
-    .top-left img {
-      width: 24px;
-      height: 24px;
-    }
-
-    h1 {
-      margin-top: 120px;
+    /* Main content */
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      font-size: 48px;
-      animation: fadeIn 1.4s ease;
+      animation: slideUp 1.2s ease forwards;
     }
 
-    p {
-      text-align: center;
-      opacity: 0.7;
+    .subtitle {
+      font-size: 32px;
+      margin-bottom: 10px;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    .desc {
+      font-size: 18px;
+      color: #bbbbbb;
       margin-bottom: 30px;
-      animation: fadeIn 2s ease;
+      animation: fadeIn 1.8s forwards;
     }
 
+    /* Buttons */
     .buttons {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      animation: slideUp 1.2s ease;
+      flex-direction: column;
+      gap: 15px;
+      animation: fadeIn 2s forwards;
     }
 
     .btn {
-      background: white;
-      color: black;
-      border: none;
+      background: linear-gradient(135deg, #5b7cff, #8b5cff);
+      color: white;
+      text-decoration: none;
       padding: 14px 28px;
-      border-radius: 14px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
     .btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(91,124,255,0.7);
     }
 
     .btn img {
@@ -86,75 +103,64 @@
       height: 20px;
     }
 
-    .card {
-      margin: 60px auto;
-      padding: 40px;
-      background: #0b0b0b;
-      border-radius: 25px;
-      max-width: 700px;
-      box-shadow: 0 0 40px rgba(255,255,255,0.03);
-      animation: fadeIn 2.5s ease;
+    .yt-icon {
+      width: 28px !important;
+      height: 28px !important;
     }
 
-    /* Sección scrolleable */
+    /* Animations */
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Feature list section */
     .features {
       margin-top: 80px;
-      padding: 60px 20px 100px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     .features h2 {
-      font-size: 42px;
-      margin-bottom: 40px;
-      animation: fadeIn 1.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+      font-size: 36px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-<!-- Logo -->
-<div class="top-left">
-  <img src="icon.ico" alt="icono">
-  <span>Yuki external</span>
-</div>
+  <!-- Top logo -->
+  <div class="top-bar">
+    <img src="icon.ico" alt="icon">
+    <div class="title">Yuki external</div>
+  </div>
 
-<h1>Hey, not on yuki yet?</h1>
-<p>Check our socials!</p>
+  <!-- Main content -->
+  <div class="container">
+    <div class="subtitle">Hey, not on yuki yet?</div>
+    <div class="desc">Check our socials!</div>
 
-<div class="buttons">
+    <div class="buttons">
+      <a href="https://www.youtube.com/@romajikaigi" target="_blank" class="btn">
+        <img src="youtube.png" alt="YouTube" class="yt-icon">
+        YouTube channel
+      </a>
 
-  <!-- Botón YouTube -->
-  <a href="#" class="btn">
-    <img src="youtube.png" alt="yt-icon">
-    YouTube channel
-  </a>
+      <a href="https://discord.com/invite/nTKaE7hsh6" target="_blank" class="btn">
+        Download
+      </a>
+    </div>
+  </div>
 
-  <!-- Botón Download (Discord) -->
-  <a href="https://discord.com/invite/nTKaE7hsh6" target="_blank" class="btn">
-    Download
-  </a>
-
-</div>
-
-<div class="card">
-  <h2>Welcome</h2>
-  <p>This is your main content card.</p>
-</div>
-
-<!-- Sección nueva -->
-<div class="features">
-  <h2>Feature list</h2>
-</div>
+  <!-- Feature list section -->
+  <div class="features">
+    <h2>Feature list</h2>
+  </div>
 
 </body>
 </html>
