@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi sitio pro</title>
+  <title>Yuki external</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="icon.ico">
 
   <style>
     * {
@@ -13,95 +16,44 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #111, #000);
+      background: radial-gradient(circle at top, #0a0a0a, #000);
       color: white;
-      text-align: center;
-      overflow-x: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    header {
-      padding: 20px;
-      font-size: 22px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
+    .logo-text {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .logo-text img {
+      width: 40px;
+      height: 40px;
     }
 
     h1 {
-      margin-top: 60px;
       font-size: 48px;
-      animation: fadeIn 1.4s ease;
-    }
-
-    p {
-      opacity: 0.7;
-      margin-bottom: 30px;
-      animation: fadeIn 2s ease;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      animation: slideUp 1.2s ease;
-    }
-
-    button {
-      background: white;
-      color: black;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 14px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    button:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-    }
-
-    .card {
-      margin: 60px auto;
-      padding: 40px;
-      background: #0b0b0b;
-      border-radius: 25px;
-      max-width: 700px;
-      box-shadow: 0 0 40px rgba(255,255,255,0.03);
-      animation: fadeIn 2.5s ease;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(50px); }
+      from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-<header>🚀 Mi Web Animada</header>
-
-<h1>Bienvenido a mi sitio</h1>
-<p>Ahora con animaciones y botones pro</p>
-
-<div class="buttons">
-  <button onclick="alert('Gracias por visitar!')">Saludar</button>
-  <button onclick="alert('Botón activo')">Info</button>
-  <button onclick="alert('Próximamente...')">Descargar</button>
-</div>
-
-<div class="card">
-  <h2>Sección especial</h2>
-  <p>Esta zona aparece con una animación suave al cargar.</p>
-</div>
+  <div class="logo-text">
+    <img src="icon.ico" alt="icono">
+    <h1>Yuki external</h1>
+  </div>
 
 </body>
 </html>
