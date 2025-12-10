@@ -21,7 +21,7 @@
       overflow-x: hidden;
     }
 
-    /* Logo + texto arriba */
+    /* Logo arriba a la izquierda */
     .top-left {
       position: fixed;
       top: 20px;
@@ -61,7 +61,7 @@
       animation: slideUp 1.2s ease;
     }
 
-    button {
+    .btn {
       background: white;
       color: black;
       border: none;
@@ -70,11 +70,20 @@
       font-size: 16px;
       cursor: pointer;
       transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
     }
 
-    button:hover {
+    .btn:hover {
       transform: scale(1.08);
       box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .btn img {
+      width: 20px;
+      height: 20px;
     }
 
     .card {
@@ -85,6 +94,19 @@
       max-width: 700px;
       box-shadow: 0 0 40px rgba(255,255,255,0.03);
       animation: fadeIn 2.5s ease;
+    }
+
+    /* Sección scrolleable */
+    .features {
+      margin-top: 80px;
+      padding: 60px 20px 100px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 42px;
+      margin-bottom: 40px;
+      animation: fadeIn 1.5s ease;
     }
 
     @keyframes fadeIn {
@@ -100,24 +122,38 @@
 </head>
 <body>
 
-<!-- Logo + texto arriba a la izquierda -->
+<!-- Logo -->
 <div class="top-left">
   <img src="icon.ico" alt="icono">
   <span>Yuki external</span>
 </div>
 
-<h1>Bienvenido</h1>
-<p>Ahora con animaciones y botones pro</p>
+<h1>Hey, not on yuki yet?</h1>
+<p>Check our socials!</p>
 
 <div class="buttons">
-  <button onclick="alert('Gracias por visitar!')">Saludar</button>
-  <button onclick="alert('Botón activo')">Info</button>
-  <button onclick="alert('Próximamente...')">Descargar</button>
+
+  <!-- Botón YouTube -->
+  <a href="#" class="btn">
+    <img src="youtube.png" alt="yt-icon">
+    YouTube channel
+  </a>
+
+  <!-- Botón Download (Discord) -->
+  <a href="https://discord.com/invite/nTKaE7hsh6" target="_blank" class="btn">
+    Download
+  </a>
+
 </div>
 
 <div class="card">
-  <h2>Sección especial</h2>
-  <p>Esta zona aparece con una animación suave al cargar.</p>
+  <h2>Welcome</h2>
+  <p>This is your main content card.</p>
+</div>
+
+<!-- Sección nueva -->
+<div class="features">
+  <h2>Feature list</h2>
 </div>
 
 </body>
