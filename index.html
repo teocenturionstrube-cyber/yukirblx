@@ -8,60 +8,185 @@
   <link rel="icon" type="image/x-icon" href="icon.ico">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: radial-gradient(circle at top, #111, #000); color: white; overflow-x: hidden; }
-    .top-left { position: fixed; top: 20px; left: 50px; display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: bold; z-index: 1000; }
-    .top-left img { width: 24px; height: 24px; }
-    h1 { margin-top: 120px; text-align: center; font-size: 48px; animation: fadeIn 1.4s ease; }
-    p { text-align: center; opacity: 0.7; margin-bottom: 30px; animation: fadeIn 2s ease; }
-    .buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; animation: slideUp 1.2s ease; }
-    .btn { background: white; color: black; border: none; padding: 14px 28px; border-radius: 14px; font-size: 16px; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .btn:hover { transform: scale(1.08); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-    .btn img { width: 20px; height: 20px; }
-    .card { margin: 60px auto; padding: 40px; background: #0b0b0b; border-radius: 25px; max-width: 700px; box-shadow: 0 0 40px rgba(255,255,255,0.03); animation: fadeIn 2.5s ease; }
-    .features { margin-top: 80px; padding: 60px 20px 100px; text-align: center; }
-    .features h2 { font-size: 42px; margin-bottom: 40px; animation: fadeIn 1.5s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111, #000);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Logo arriba a la izquierda */
+    .top-left {
+      position: fixed;
+      top: 20px;
+      left: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    .top-left img {
+      width: 24px;
+      height: 24px;
+    }
+
+    h1 {
+      margin-top: 120px;
+      text-align: center;
+      font-size: 48px;
+      animation: fadeIn 1.4s ease;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .small-text {
+      font-size: 16px;
+      opacity: 0.6;
+      margin-left: 10px;
+    }
+
+    p {
+      text-align: center;
+      opacity: 0.7;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      animation: slideUp 1.2s ease;
+    }
+
+    .btn {
+      background: white;
+      color: black;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .card {
+      margin: 60px auto;
+      padding: 40px;
+      background: #0b0b0b;
+      border-radius: 25px;
+      max-width: 700px;
+      box-shadow: 0 0 40px rgba(255,255,255,0.03);
+      animation: fadeIn 2.5s ease;
+      text-align: center;
+    }
+
+    /* Sección scrolleable */
+    .features {
+      margin-top: 80px;
+      padding: 60px 20px 100px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 42px;
+      margin-bottom: 40px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Tarjeta grande para Features */
+    .feature-card {
+      margin: 0 auto;
+      padding: 60px 50px;
+      background: #121212;
+      border-radius: 30px;
+      max-width: 900px;
+      box-shadow: 0 0 80px rgba(255,255,255,0.07);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
-
 <body>
 
+<!-- Logo -->
 <div class="top-left">
   <img src="icon.ico" alt="icono">
   <span>Yuki external</span>
 </div>
 
-<h1>Hey, not on yuki yet?</h1>
+<!-- Título principal -->
+<h1>
+  Do you need a free roblox external
+  <span class="small-text">(I gotchu)</span>
+</h1>
+
 <p>Check our socials!</p>
 
 <div class="buttons">
 
-  <!-- Botón YouTube (link arreglado) -->
+  <!-- Botón YouTube -->
   <a href="https://www.youtube.com/@romajikaigi" target="_blank" class="btn">
     <img src="youtube.png" alt="yt-icon">
     YouTube channel
   </a>
 
-  <!-- Botón Download - Discord (link arreglado) -->
+  <!-- Botón Download (Discord) -->
   <a href="https://discord.com/invite/nTKaE7hsh6" target="_blank" class="btn">
     Download
   </a>
 
 </div>
 
-<div class="card" style="text-align: center;">
+<!-- Tarjeta principal -->
+<div class="card">
   <h2>100% Free and Keyless.</h2>
   <p style="font-size: 13px; opacity: 0.6;">
-    betas and paid versions sold by separate
+    (betas and paid versions sold by separate)
   </p>
 </div>
 
+<!-- Features -->
 <div class="features">
   <h2>Feature list</h2>
+
+  <div class="feature-card">
+    <p style="opacity: 0.6;">Coming soon...</p>
+  </div>
 </div>
 
 </body>
 </html>
-
